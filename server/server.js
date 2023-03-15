@@ -44,10 +44,8 @@ function initial() {
 }
 
 require("./routes/auth.routes")(app);
+require("./routes/authCheck.routes")(app);
 
-app.get('/', (req, res) => {
-    res.send('Good morning  World!')
-})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
