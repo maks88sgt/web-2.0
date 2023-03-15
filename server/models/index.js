@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-const db={};
+const db = {};
+
+db.mongoose = mongoose;
 
 db.user = require("./user.model");
 db.chat = require("./chat.model");
