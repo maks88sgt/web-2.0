@@ -1,3 +1,8 @@
+import {Button} from "@mui/material";
+
 export default function Index() {
-    return <div>Signup page - index</div>
+    return <div>
+        <Button variant={"outlined"}>Outlined</Button>
+        <Button variant={"contained"}>Contained</Button>
+    </div>
 }
