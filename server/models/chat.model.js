@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 const Chat = mongoose.model("Chat", new mongoose.Schema({
     chatname: String,
     participants:[String],
-    /*moderator: {
-        type: mongoose.Schema.Type.ObjectId,
-        ref: "User"
-    }*/
+    owner: String,
+    messages: [
+        {
+            text: String,
+            author: String,
+            date: String
+        }
+    ]
 }))
 
-module.export = Chat;
+module.exports = Chat;
