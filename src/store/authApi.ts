@@ -25,4 +25,4 @@ export const authApi = createApi({
     }),
 })
 
-export const {useSingupMutation} = authApi
+export const {useSingupMutation, useSinginMutation} = authApi
