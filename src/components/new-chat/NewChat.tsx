@@ -1,6 +1,7 @@
 import { Dispatch, useState } from 'react';
 import {Box, Button, IconButton, Modal, Paper, TextField, Typography} from "@mui/material";
 import { Close } from '@mui/icons-material';
+import {useCreateChatMutation} from "@/store/chatsApi";
 
 
 type NewChatProps = {
@@ -10,10 +11,11 @@ type NewChatProps = {
 
 export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
     const [newChatName, setNewChatName] = useState('');
+    const [chatNameErrorMessage, setChatNameErrorMessage] = useState('');
 
     const [selectedUsers, setSelectedUsers] = useState([]);
 
-    const [chatNameErrorMessage, setChatNameErrorMessage] = useState('');
+    const [createChat] = useCreateChatMutation()
 
     return (
         <Modal
@@ -72,10 +74,9 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
                     <Button
                         variant={'contained'}
                         onClick={() => {
-
                         }}
                     >
-                        Авторизоваться
+                        Создать новый чат
                     </Button>
                 </Box>
             </Paper>

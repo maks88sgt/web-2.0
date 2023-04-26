@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import { useContext } from 'react';
 
 export const ChatListItem = ({
     chatName,

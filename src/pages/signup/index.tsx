@@ -1,6 +1,9 @@
 import {Box, Button, TextField} from "@mui/material";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useSingupMutation} from "@/store/authApi";
+import {setUserId} from "@/store/auth/authActions";
+import {useDispatch} from "react-redux";
+import {useRouter} from "next/router";
 
 export default function Index() {
     const [username, setUsername] = useState("");
@@ -15,7 +18,19 @@ export default function Index() {
     const [repeatPassword, setRepeatPassword] = useState("");
 
 
-    const [singup] = useSingupMutation();
+    const [singup, signupResult] = useSingupMutation();
+
+    const dispatch = useDispatch()
+
+    const router = useRouter()
+
+    useEffect(()=>{
+        if (signupResult.isSuccess) {
+            console.log(">>>>>>>>>>>>>>>", signupResult)
+            dispatch(setUserId({userId:signupResult.data?.userId}))
+            router.push("/chats")
+        }
+    }, [signupResult])
 
 
     return <Box sx={{
@@ -77,7 +92,6 @@ export default function Index() {
             />
             <Button onClick={()=> {
                 if(!isUsernameError && repeatPassword === password) {
-                    console.log(">>>>>>>>>>>", {username, nickname, email, password})
                     singup({username, nickname, email, password})
                 }
 

@@ -31,7 +31,7 @@ const getChats = (req, res) => {
                 res.status(404).send({message: `Chats for ${req.params.user} not found`});
             }
             res.status(200).send({
-                    message: "Chats is found", chats
+                    message: "Chats is found", payload: chats
                 }
             );
         }
@@ -84,7 +84,7 @@ const updateChat = (req, res) => {
                 res.status(404).send({message: `Chat for ${req.body.id} not found`});
             }
             res.status(200).send({
-                    message: "Chats is updated", chat
+                    message: "Chats is updated", payload: chat
                 }
             );
         }

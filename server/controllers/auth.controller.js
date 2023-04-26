@@ -17,7 +17,7 @@ const signup = (req, res) => {
             res.status(500).send({message: err});
             return;
         }
-        res.status(200).send({message: "User successfully added"});
+        res.status(200).send({message: "User successfully added", payload: {userId: user.id}});
         console.log(`User with name ${user.username} is added`);
     })
 }
