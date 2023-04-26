@@ -2,13 +2,22 @@ import { useContext, useEffect, useState } from 'react';
 import { ChatsList } from '../chats-list/ChatsList';
 import {Box, Button, Input} from "@mui/material";
 import {NewChat} from "@/components/new-chat/NewChat";
+import {useGetUserChatsQuery} from "@/store/chatsApi";
+import {useSelector} from "react-redux";
+import {RootState} from "@/store/store";
 
 
 export const ChatsListContainer = () => {
-    const listOfChats: {chatname: string; }[] = [];
+    const userId = useSelector((state: RootState)=> state.auth.userId);
+
+    const {data} = useGetUserChatsQuery({ userId });
+
+    const listOfChats = data?.payload ?? []
+
+    console.log(listOfChats)
 
     const [search, setSearch] = useState('');
-    const [filteredChats, setFilteredChats] = useState(listOfChats);
+    /*const [filteredChats, setFilteredChats] = useState(listOfChats);
 
     useEffect(() => {
         if (search) {
@@ -20,7 +29,7 @@ export const ChatsListContainer = () => {
         } else {
             setFilteredChats(listOfChats);
         }
-    }, [search, listOfChats]);
+    }, [search, listOfChats]);*/
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -39,7 +48,7 @@ export const ChatsListContainer = () => {
                 onChange={(ev) => setSearch(ev.target.value)}
                 placeholder={'Search chat by name'}
             />
-            <ChatsList chats={filteredChats} />
+            <ChatsList chats={listOfChats} />
             <Button
                 variant={"contained"}
                 sx={{ position: 'absolute', bottom: '20px', right: '20px' }}

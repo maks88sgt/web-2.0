@@ -1,7 +1,9 @@
-import { Dispatch, useState } from 'react';
+import {Dispatch, useEffect, useState} from 'react';
 import {Box, Button, IconButton, Modal, Paper, TextField, Typography} from "@mui/material";
 import { Close } from '@mui/icons-material';
 import {useCreateChatMutation} from "@/store/chatsApi";
+import {RootState} from "@/store/store";
+import {useSelector} from "react-redux";
 
 
 type NewChatProps = {
@@ -15,7 +17,15 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
 
     const [selectedUsers, setSelectedUsers] = useState([]);
 
-    const [createChat] = useCreateChatMutation()
+    const [createChat, createChatResult] = useCreateChatMutation()
+
+    const { userId } = useSelector((state: RootState)=> state.auth)
+
+    useEffect(()=>{
+        if(createChatResult.isSuccess) {
+            setModalIsOpen(false)
+        }
+    }, [createChatResult])
 
     return (
         <Modal
@@ -74,6 +84,7 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
                     <Button
                         variant={'contained'}
                         onClick={() => {
+                            createChat({owner: userId, chatname: newChatName, participants: [userId]})
                         }}
                     >
                         Создать новый чат

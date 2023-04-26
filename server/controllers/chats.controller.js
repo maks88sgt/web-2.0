@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const Chat = db.chat;
 
 const createChat = (req, res) => {
+    console.log(">>>>>>>>>>>>", req.body)
     const chat = new Chat({
         chatname: req.body.chatname,
         participants: req.body.participants,
@@ -29,11 +30,13 @@ const getChats = (req, res) => {
             }
             if (!chats.length) {
                 res.status(404).send({message: `Chats for ${req.params.user} not found`});
+                return;
             }
             res.status(200).send({
                     message: "Chats is found", payload: chats
                 }
             );
+            return;
         }
     )
 }

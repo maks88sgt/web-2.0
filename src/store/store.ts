@@ -2,9 +2,11 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import {authApi} from "@/store/authApi";
 import {auth} from "@/store/auth/authReducer";
 import {chatsApi} from "@/store/chatsApi";
+import {chat} from "@/store/chats/chatReducer";
 
 const reducer = combineReducers({
     auth: auth.reducer,
+    chat: chat.reducer,
     [authApi.reducerPath]: authApi.reducer,
     [chatsApi.reducerPath]: chatsApi.reducer,
 })

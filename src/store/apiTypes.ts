@@ -5,6 +5,7 @@ export type GeneralResponse<T = void> = {
 
 
 export type ChatDTO = {
+    _id: string;
     chatname: string;
     participants: string[];
     owner: string;

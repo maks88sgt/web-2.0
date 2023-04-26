@@ -4,6 +4,7 @@ import {ChatDTO, GeneralResponse, MessageDTO} from "@/store/apiTypes";
 export const chatsApi = createApi({
     reducerPath: 'chatsApi',
     baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3001/chats/'}),
+    tagTypes: ["Chats"],
     endpoints: (builder) => ({
         getUserChats: builder.query <GeneralResponse<ChatDTO>,
             {
@@ -13,6 +14,7 @@ export const chatsApi = createApi({
             query: ({userId}) => ({
                 url: `/${userId}`
             }),
+            providesTags: ["Chats"]
         }),
         createChat: builder.mutation <GeneralResponse<ChatDTO>,
             {
@@ -28,6 +30,7 @@ export const chatsApi = createApi({
                     chatname, participants, owner
                 }
             }),
+            invalidatesTags: ["Chats"]
         }),
         deleteChat: builder.mutation <GeneralResponse,
             {

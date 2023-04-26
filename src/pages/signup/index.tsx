@@ -26,8 +26,7 @@ export default function Index() {
 
     useEffect(()=>{
         if (signupResult.isSuccess) {
-            console.log(">>>>>>>>>>>>>>>", signupResult)
-            dispatch(setUserId({userId:signupResult.data?.userId}))
+            dispatch(setUserId({userId:signupResult.data.payload?.userId}))
             router.push("/chats")
         }
     }, [signupResult])

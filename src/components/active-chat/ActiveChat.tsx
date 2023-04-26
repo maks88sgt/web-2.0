@@ -1,11 +1,13 @@
 import {Box, Button, Input, Typography} from '@mui/material';
 import { useState } from 'react';
 import { MessageItem } from '../message-item/MessageItem';
+import {RootState} from "@/store/store";
+import {useSelector} from "react-redux";
 
 export const ActiveChat = () => {
     const [newMessage, setNewMessage] = useState('');
 
-    const selectedChat = {chatname: "Test", participants: [], messages: [], owner: "test user"}
+    const selectedChat = useSelector((state: RootState)=> state.chat.selectedChat)
 
     return (
         <Box

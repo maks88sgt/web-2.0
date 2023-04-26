@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f44c6f0-7e42-45ce-bbff-81b50750bd44" name="Changes" comment="chats page">
-      <change afterPath="$PROJECT_DIR$/src/store/apiTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/auth/authActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/auth/authReducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/chatsApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/chats/chatReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/chats/chatsActions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/chats.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/chats.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/chats.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/chats.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat-list-item/ChatListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat-list-item/ChatListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/active-chat/ActiveChat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/active-chat/ActiveChat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chats-list-container/ChatsListContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chats-list-container/ChatsListContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chats-list/ChatsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chats-list/ChatsList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/new-chat/NewChat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/new-chat/NewChat.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/signup/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/signup/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/authApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/authApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/apiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/apiTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/chatsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/chatsApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,24 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Maksim/WebstormProjects/web-2.0/src/components&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Maksim\\WebstormProjects\\web-2.0\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Maksim/WebstormProjects/web-2.0/src/store/chats",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Users\\Maksim\\WebstormProjects\\web-2.0\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Maksim\WebstormProjects\web-2.0\src\store\chats" />
       <recent name="C:\Users\Maksim\WebstormProjects\web-2.0\src\components" />
       <recent name="C:\Users\Maksim\WebstormProjects\web-2.0\src\pages\signup" />
     </key>
@@ -110,7 +110,7 @@
       <workItem from="1680072233138" duration="1379000" />
       <workItem from="1681278114620" duration="9590000" />
       <workItem from="1681454534492" duration="718000" />
-      <workItem from="1682486091037" duration="5023000" />
+      <workItem from="1682486091037" duration="8026000" />
     </task>
     <task id="LOCAL-00001" summary="Models created">
       <created>1678859870082</created>
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682486405548</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="chats page">
+      <created>1682492347605</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682492347605</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
