@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f44c6f0-7e42-45ce-bbff-81b50750bd44" name="Changes" comment="example">
-      <change afterPath="$PROJECT_DIR$/server/controllers/chats.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/chats.routes.js" afterDir="false" />
+    <list default="true" id="1f44c6f0-7e42-45ce-bbff-81b50750bd44" name="Changes" comment="chats backend">
+      <change afterPath="$PROJECT_DIR$/src/components/active-chat/ActiveChat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chat-list-item/ChatListItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chats-list-container/ChatsListContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/chats-list/ChatsList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/message-item/MessageItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/new-chat/NewChat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/chats.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/chat.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/chat.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +41,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Maksim/WebstormProjects/web-2.0/src/pages/signup&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Maksim/WebstormProjects/web-2.0/src/components&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -49,6 +54,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Maksim\WebstormProjects\web-2.0\src\components" />
       <recent name="C:\Users\Maksim\WebstormProjects\web-2.0\src\pages\signup" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -99,7 +105,8 @@
       <workItem from="1679541584756" duration="124000" />
       <workItem from="1680069425538" duration="2765000" />
       <workItem from="1680072233138" duration="1379000" />
-      <workItem from="1681278114620" duration="5997000" />
+      <workItem from="1681278114620" duration="9590000" />
+      <workItem from="1681454534492" duration="718000" />
     </task>
     <task id="LOCAL-00001" summary="Models created">
       <created>1678859870082</created>
@@ -150,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681278839260</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chats backend">
+      <created>1681284720984</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681284720984</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +201,7 @@
     <MESSAGE value="auth checking" />
     <MESSAGE value="add mui" />
     <MESSAGE value="example" />
-    <option name="LAST_COMMIT_MESSAGE" value="example" />
+    <MESSAGE value="chats backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="chats backend" />
   </component>
 </project>
