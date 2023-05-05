@@ -1,10 +1,12 @@
 import {Dispatch, useEffect, useState} from 'react';
-import {Box, Button, IconButton, Modal, Paper, TextField, Typography} from "@mui/material";
-import { Close } from '@mui/icons-material';
+import {Box, Button, Chip, IconButton, Modal, Paper, TextField, Typography} from "@mui/material";
+import {Close} from '@mui/icons-material';
 import {useCreateChatMutation, useGetUserChatsQuery} from "@/store/chatsApi";
 import {RootState} from "@/store/store";
 import {useSelector} from "react-redux";
 import {useGetUsersQuery} from "@/store/usersApi";
+import {UserDTO} from "@/store/apiTypes";
+import {MultipleSelect} from "@/components/new-chat/UsersSelect";
 
 
 type NewChatProps = {
@@ -12,22 +14,18 @@ type NewChatProps = {
     setModalIsOpen: Dispatch<boolean>;
 };
 
-export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
+export const NewChat = ({modalIsOpen, setModalIsOpen}: NewChatProps) => {
     const [newChatName, setNewChatName] = useState('');
     const [chatNameErrorMessage, setChatNameErrorMessage] = useState('');
 
-    const [selectedUsers, setSelectedUsers] = useState([]);
+    const [selectedUsers, setSelectedUsers] = useState<UserDTO[]>([]);
 
     const [createChat, createChatResult] = useCreateChatMutation()
 
-    const {data} = useGetUsersQuery()
+    const {userId} = useSelector((state: RootState) => state.auth)
 
-    console.log(">>>>>>>>>>>>>>", data)
-
-    const { userId } = useSelector((state: RootState)=> state.auth)
-
-    useEffect(()=>{
-        if(createChatResult.isSuccess) {
+    useEffect(() => {
+        if (createChatResult.isSuccess) {
             setModalIsOpen(false)
         }
     }, [createChatResult])
@@ -54,13 +52,13 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
                 }}
             >
                 <IconButton
-                    sx={{ position: 'absolute', right: 10, top: 10 }}
+                    sx={{position: 'absolute', right: 10, top: 10}}
                     onClick={() => {
                         setNewChatName('');
                         setModalIsOpen(false);
                     }}
                 >
-                    <Close />
+                    <Close/>
                 </IconButton>
                 <Box
                     sx={{
@@ -71,7 +69,7 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
                         justifyContent: 'center',
                     }}
                 >
-                    <Typography>Создать новый чат</Typography>
+                    <Typography>Create new chat</Typography>
                     <TextField
                         label={'Chat name'}
                         aria-describedby="username-helper-text"
@@ -86,13 +84,18 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
                         }}
                         fullWidth={true}
                     />
+                    <MultipleSelect selectedUsers={selectedUsers} setSelectedUsers={setSelectedUsers}/>
                     <Button
                         variant={'contained'}
                         onClick={() => {
-                            createChat({owner: userId, chatname: newChatName, participants: [userId]})
+                            createChat({
+                                owner: userId,
+                                chatname: newChatName,
+                                participants: [userId, ...selectedUsers.map((it) => it.id)]
+                            })
                         }}
                     >
-                        Создать новый чат
+                        Create
                     </Button>
                 </Box>
             </Paper>

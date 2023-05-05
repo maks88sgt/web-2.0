@@ -18,3 +18,7 @@ export type MessageDTO = {
     author: string;
     date: string;
 }
+
+export type UserDTO = {
+    username: string; email: string; id: string
+}
