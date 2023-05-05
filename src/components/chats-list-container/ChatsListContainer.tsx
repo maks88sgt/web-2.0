@@ -5,6 +5,7 @@ import {NewChat} from "@/components/new-chat/NewChat";
 import {useGetUserChatsQuery} from "@/store/chatsApi";
 import {useSelector} from "react-redux";
 import {RootState} from "@/store/store";
+import {ChatDTO} from "@/store/apiTypes";
 
 
 export const ChatsListContainer = () => {
@@ -48,7 +49,7 @@ export const ChatsListContainer = () => {
                 onChange={(ev) => setSearch(ev.target.value)}
                 placeholder={'Search chat by name'}
             />
-            <ChatsList chats={listOfChats} />
+            <ChatsList chats={listOfChats as ChatDTO[]} />
             <Button
                 variant={"contained"}
                 sx={{ position: 'absolute', bottom: '20px', right: '20px' }}

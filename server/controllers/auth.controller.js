@@ -35,7 +35,8 @@ const signin = (req, res) => {
         if (passwordIsValid) {
             const token = jwt.sign({id: user.id}, "secret", {expiresIn: 1000 * 60 * 60})
             res.status(200).send({
-                message: "User is authenticated", user: {
+                message: "User is authenticated", payload: {
+                    userId: user.id,
                     username: user.username,
                     nickname: user.nickname,
                     token
