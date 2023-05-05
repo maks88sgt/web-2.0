@@ -1,9 +1,10 @@
 import {Dispatch, useEffect, useState} from 'react';
 import {Box, Button, IconButton, Modal, Paper, TextField, Typography} from "@mui/material";
 import { Close } from '@mui/icons-material';
-import {useCreateChatMutation} from "@/store/chatsApi";
+import {useCreateChatMutation, useGetUserChatsQuery} from "@/store/chatsApi";
 import {RootState} from "@/store/store";
 import {useSelector} from "react-redux";
+import {useGetUsersQuery} from "@/store/usersApi";
 
 
 type NewChatProps = {
@@ -18,6 +19,10 @@ export const NewChat = ({ modalIsOpen, setModalIsOpen }: NewChatProps) => {
     const [selectedUsers, setSelectedUsers] = useState([]);
 
     const [createChat, createChatResult] = useCreateChatMutation()
+
+    const {data} = useGetUsersQuery()
+
+    console.log(">>>>>>>>>>>>>>", data)
 
     const { userId } = useSelector((state: RootState)=> state.auth)
 
